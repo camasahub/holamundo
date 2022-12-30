@@ -1,15 +1,14 @@
-FROM alpine
+FROM nginx:alpine
 
-COPY githubactions /usr/share/nginx/html
+COPY holamundo.html /usr/share/nginx/html/
 
 ENV archivo docker
 
 WORKDIR /usr/share/nginx/html
 
-RUN echo "$archivo" > /usr/share/nginx/html/env.html
+RUN echo "$archivo" > /usr/share/nginx/html/holamundo.html
 
 CMD nginx -g 'daemon off;'
-
 
 
 #FROM alpine:3.10
